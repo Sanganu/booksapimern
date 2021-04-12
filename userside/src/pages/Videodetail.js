@@ -22,7 +22,8 @@ function Videodetails(props) {
           <p>{props.description}</p>
           <p>{props.channelTitle}</p>
           <p>{props.published}</p>
-          <a key="1" href={props.link} rel="noopener noreferer" target="_blank">YOUTUBE LINK</a>
+          <a key="1" href={props.link} rel="noopener noreferrer" target="_blank">YOUTUBE LINK</a>
+          <Button onClick= {}>Save</Button>
         </Col>
       </Row>
     </Card>
