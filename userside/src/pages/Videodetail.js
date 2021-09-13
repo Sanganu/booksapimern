@@ -22,8 +22,8 @@ function Videodetails(props) {
           <p>{props.description}</p>
           <p>{props.channelTitle}</p>
           <p>{props.published}</p>
-          <a key="1" href={props.link} rel="noopener noreferrer" target="_blank">YOUTUBE LINK</a>
-          <Button onClick= {}>Save</Button>
+          <a  href={props.link} rel="noopener noreferrer" target="_blank">YOUTUBE LINK</a>
+          <Button onClick=  { () => props.saveVideo({title:props.title,description:props.description,channelTitle:props.channelTitle,description:props.description}) }>Save</Button>
         </Col>
       </Row>
     </Card>

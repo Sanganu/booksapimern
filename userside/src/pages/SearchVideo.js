@@ -3,7 +3,7 @@ import { TextInput, Button, Row, Col } from "react-materialize";
 import API from "../APICall/API";
 import Videodetail from "./Videodetail";
 
-function SearchVideo(props){
+const SearchVideo = (props) => {
     const[searchTerm,setSearchTerm]=useState("")
     const[videoDetails,setVideoDetails] =  useState([])
     const getVideos = () =>{
@@ -29,6 +29,9 @@ function SearchVideo(props){
                 console.log("Error",error)
         })
     }
+    const saveVideo = (video) =>{
+            console.log(video)
+    }
   
         return(<div>
      
@@ -45,6 +48,7 @@ function SearchVideo(props){
                           published = {video.published}
                           link = {video.link}
                           id={video.id}
+                          saveVideo={saveVideo}
                           key={key} />
                 ))}
                 </Col>

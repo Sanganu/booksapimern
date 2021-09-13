@@ -6,7 +6,7 @@ const youTubeSearch = require("youtube-search");
 
 module.exports = {
     findAll: function (req, res) {
-        console.log("Youtubeheroku  API - Search", req.params.str);
+        console.log("AXIOS Controller -  API - Search", req.params.str);
         let videos = [];
         let options = {
             maxResults: 9,
@@ -18,24 +18,12 @@ module.exports = {
                 res.json(err)
             }
             else {
-                console.log("Youtube results", results);
-                // let youTubeResults = results.map(video => {
-                //     return ({
-                //         youtubeId: video.id,
-                //         url: video.link,
-                //         publishedOn: video.publishedAt,
-                //         channelId: video.channelId,
-                //         channelTitle: video.channelTitle,
-                //         videoTitle: video.videoTitle,
-                //         description: video.description,
-                //         thumbnail: video.thumbnails.default.url
-                //     })
-                // })
+               console.log("Youtube results", results);
                 VideoSchema.find({}).select('youtubeId')
                     .then(savedVideos => {
                         console.log("Saved Video",savedVideos)
                         let newVideos = results.map(element => {
-                            if (savedVideos.indexOf(element.id) === -1) {
+                            if (savedVideos.indexOf(element.id) === -1 ) {
                                 return element
                             }
 
